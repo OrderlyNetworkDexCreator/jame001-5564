@@ -130,13 +130,11 @@ const getEnabledMenus = (
   }
 
   try {
-    const enabledMenuNames = enabledMenusEnv
-      .split(",")
-      .map((name) => name.trim());
+    const enabledMenuIds = enabledMenusEnv.split(",").map((id) => id.trim());
 
     const enabledMenus = [];
-    for (const menuName of enabledMenuNames) {
-      const menuItem = allMenuItems.find((item) => item.id === menuName);
+    for (const menuId of enabledMenuIds) {
+      const menuItem = allMenuItems.find((item) => item.id === menuId);
       if (menuItem) {
         enabledMenus.push(menuItem);
       }
